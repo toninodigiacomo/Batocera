@@ -22,7 +22,7 @@ batocera-save-overlay
 
 ### 2. Configure config.txt
 
-Edit **/boot/config.txt* and replace its content with the following settings. These force the ***fKMS*** driver and the correct ***640x480*** DPI timings.
+Edit **/boot/config.txt** and replace its content with the following settings. These force the ***fKMS*** driver and the correct ***640x480*** DPI timings.
 ```
 [all]
 # Keep the GPU active for the splash screen
@@ -72,3 +72,8 @@ system.wayland=0
 display.rotate=0
 ```
 _full batocera-boot.conf and batocera.conf attached_
+
+
+## Troubleshooting & Known Issues
+**3-4 Pixel Horizontal Shift**  Some units may show a tiny shift to the left. On ***Batocera v39 with vc4-fkms-v3d***, standard overscan_left commands are often ignored by the driver.
+**System Updates** If you update Batocera, the ***/usr/bin/batocera-gpicase-install*** script might be restored. You will need to repeat Step 1 if your screen glitches again after an update.
