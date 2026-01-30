@@ -71,3 +71,4 @@ In batocera.conf:
 system.wayland=0
 display.rotate=0
 ```
+_full batocera-boot.conf and batocera.conf attached_
