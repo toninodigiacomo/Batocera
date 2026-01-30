@@ -6,7 +6,8 @@
 ## The Problem
 By default, Batocera (bcm2836 image) includes a legacy script that detects the Pi Zero 2W and mistakenly applies GPi Case 1 settings (320x240). This results in a distorted, "psychedelic" green/blue image or a complete failure to initialize the display driver.
 
-## Step 1: Neutralize the Auto-Install Script
+## Installation
+### 1. Neutralize the Auto-Install Script
 The script that overwrites the configuration at every boot must be disabled. **Connect via SSH** and run:
 ```
 # Remount the system as Read-Write
@@ -19,7 +20,7 @@ chmod -x /usr/bin/batocera-gpicase-install
 batocera-save-overlay
 ```
 
-## Step 2: Configure config.txt
+### 2. Configure config.txt
 
 Edit **/boot/config.txt* and replace its content with the following settings. These force the ***fKMS*** driver and the correct ***640x480*** DPI timings.
 ```
@@ -56,3 +57,16 @@ dtoverlay=pwm-2chan,pin=18,func=2,pin2=19,func2=2
 ```
 _full config.txt attached_
 
+### 3. Global System Settings
+
+To ensure stability, **batocera-boot.conf** (in the boot partition) and **batocera.conf** (in /userdata/system/) must be updated:
+
+In batocera-boot.conf:
+```
+case=none
+```
+
+In batocera.conf:
+```
+system.wayland=0
+display.rotate=0
