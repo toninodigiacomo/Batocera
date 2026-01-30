@@ -75,5 +75,5 @@ _full batocera-boot.conf and batocera.conf attached_
 
 
 ## Troubleshooting & Known Issues
-**3-4 Pixel Horizontal Shift**  Some units may show a tiny shift to the left. On ***Batocera v39 with vc4-fkms-v3d***, standard overscan_left commands are often ignored by the driver.
-**System Updates** If you update Batocera, the ***/usr/bin/batocera-gpicase-install*** script might be restored. You will need to repeat Step 1 if your screen glitches again after an update.
+- **3-4 Pixel Horizontal Shift**  Some units may show a tiny shift to the left. On ***Batocera v39 with vc4-fkms-v3d***, standard overscan_left commands are often ignored by the driver.
+- **System Updates** If you update Batocera, the ***/usr/bin/batocera-gpicase-install*** script might be restored. You will need to repeat Step 1 if your screen glitches again after an update.
