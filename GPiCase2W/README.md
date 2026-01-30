@@ -70,3 +70,4 @@ In batocera.conf:
 ```
 system.wayland=0
 display.rotate=0
+```
