@@ -73,6 +73,16 @@ display.rotate=0
 ```
 _full batocera-boot.conf and batocera.conf attached_
 
+### 4. Safe Shutdown (Native Method)
+
+Batocera v39+ has built-in drivers for the GPi Case. **No** need to install external scripts.
+
+1.  **Hardware Check** Ensure the physical "Safe Shutdown" switch is set to **ON** (located inside the cartridge/battery compartment).
+2.  **Enable the driver** Edit `/userdata/system/batocera.conf` and find the `Platform Specific Options` section. Set the power switch to:
+    ```ini
+    system.power.switch=RETROFLAG_GPI
+    ```
+3.  **Enable UART**: Ensure `enable_uart=1` is present in your `/boot/config.txt` (required for the shutdown signal communication).
 
 ## Troubleshooting & Known Issues
 - **3-4 Pixel Horizontal Shift**  Some units may show a tiny shift to the left. On ***Batocera v39 with vc4-fkms-v3d***, standard overscan_left commands are often ignored by the driver.
