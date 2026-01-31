@@ -9,7 +9,7 @@ By default, Batocera (bcm2836 image) includes a legacy script that detects the P
 ## Installation
 ### 1. Neutralize the Auto-Install Script
 The script that overwrites the configuration at every boot must be disabled. **Connect via SSH** and run:
-```
+```ini
 # Remount the system as Read-Write
 mount -o remount,rw /
 # Empty the script content to stop it from running
@@ -23,7 +23,7 @@ batocera-save-overlay
 ### 2. Configure config.txt
 
 Edit **/boot/config.txt** and replace its content with the following settings. These force the ***fKMS*** driver and the correct ***640x480*** DPI timings.
-```
+```ini
 [all]
 # Keep the GPU active for the splash screen
 disable_splash=0
@@ -62,12 +62,12 @@ _full config.txt attached_
 To ensure stability, **batocera-boot.conf** (in the boot partition) and **batocera.conf** (in /userdata/system/) must be updated:
 
 In batocera-boot.conf:
-```
+```ini
 case=none
 ```
 
 In batocera.conf:
-```
+```ini
 system.wayland=0
 display.rotate=0
 ```
